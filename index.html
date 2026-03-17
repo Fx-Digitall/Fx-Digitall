@@ -235,9 +235,10 @@
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
             <!-- Mobile Menu Toggle -->
-            <button class="md:hidden text-zinc-300 hover:text-white transition-colors">
+            <button id="menu-btn" class="md:hidden text-zinc-300 hover:text-white transition-colors">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
+
         </div>
 
         <!-- Mobile Menu Overlay -->
@@ -319,7 +320,8 @@
                         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAzNHYtbDItMiAuLi4iIGZpbGw9IiM5QzkyQTMiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvZz48L3N2Zz4=')] opacity-20 pointer-events-none group-hover:opacity-[0.25] transition-opacity">
                     </div>
 
-                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full relative z-0">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full relative z-0">
+
                         <div
                             class="glass-card rounded-xl border border-white/5 p-4 flex flex-col justify-between animate-float hover:border-primary/40 hover:bg-white/[0.02] transition-colors relative overflow-hidden group/card shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
                             <div
@@ -805,12 +807,13 @@
     <!-- WhatsApp Attendant Modal -->
     <div id="attendantModal"
         class="fixed inset-0 z-[100] hidden items-center justify-center p-6 bg-black/80 backdrop-blur-md transition-all duration-300 opacity-0">
-        <div class="relative w-full max-w-sm glass-card p-10 rounded-[2.5rem] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform scale-90 transition-all duration-300"
+        <div class="relative w-full max-w-sm glass-card p-6 md:p-10 rounded-[2.5rem] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform scale-90 transition-all duration-300 max-h-[90vh] overflow-y-auto"
             id="modalContent">
             <button onclick="closeAttendantModal()"
-                class="absolute right-6 top-6 text-zinc-500 hover:text-white transition-colors">
+                class="absolute right-4 top-4 md:right-6 md:top-6 text-zinc-500 hover:text-white transition-colors">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
+
             <h4 class="font-display text-2xl font-bold text-center mb-2 text-white">Falar com quem?</h4>
             <p class="text-zinc-500 text-center text-sm mb-10 font-medium">Escolha seu atendente favorito:</p>
 
@@ -899,6 +902,23 @@
                     </div>
                 </button>
 
+                <button onclick="redirectToWhatsApp('Matheus')"
+                    class="w-full flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-orange-500/40 hover:bg-orange-500/5 transition-all group active:scale-95">
+                    <div
+                        class="w-14 h-14 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all shadow-inner">
+                        <i data-lucide="user-check" class="w-7 h-7"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="flex items-center gap-1.5 mb-0.5">
+                            <span
+                                class="block text-white font-bold text-lg group-hover:text-orange-500 transition-colors">Matheus</span>
+                            <i data-lucide="badge-check" class="w-4 h-4 text-blue-500 fill-blue-500/20"></i>
+                        </div>
+                        <span class="text-xs text-zinc-500 font-medium tracking-wide">Designer Gráfico</span>
+                    </div>
+                </button>
+
+
 
 
                 <button onclick="redirectToWhatsApp('Suporte')"
@@ -964,8 +984,10 @@
                 'Guilherme': '557998328062',
                 'Isa': '557991362173',
                 'Symon': '557996069648',
+                'Matheus': '5579981363431',
                 'Suporte': '557998328062' // Placeholder - User should update
             };
+
 
 
 
