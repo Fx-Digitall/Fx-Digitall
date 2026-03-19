@@ -8,6 +8,10 @@
     <meta name="description"
         content="Agência de performance focada em gestão de redes sociais, tráfego pago e criação de sites.">
     
+    <!-- Security Enhancements -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src 'none'; object-src 'none';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Open Graph / Meta -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://fexdigital.com.br/">
@@ -67,7 +71,7 @@
         }
     </script>
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@0.475.0"></script>
     <style>
         :root {
             --glass-bg: rgba(0, 0, 0, 0.6);
@@ -235,6 +239,15 @@
 </head>
 
 <body class="antialiased selection:bg-primary/30 selection:text-white relative">
+    <noscript>
+        <div class="fixed inset-0 z-[1000] bg-black flex items-center justify-center p-6 text-center">
+            <div class="glass-card p-10 rounded-3xl border border-primary/20 max-w-lg">
+                <i data-lucide="shield-alert" class="w-16 h-16 text-primary mx-auto mb-6"></i>
+                <h1 class="font-display text-3xl font-black mb-4">Javascript Necessário</h1>
+                <p class="text-zinc-400 leading-relaxed">Este site utiliza tecnologias modernas que exigem o Javascript ativado para uma experiência segura e premium. Por favor, ative o Javascript nas configurações do seu navegador.</p>
+            </div>
+        </div>
+    </noscript>
 
     <!-- Background Elements -->
     <div class="fixed inset-0 z-[-2] bg-dark"></div>
@@ -977,10 +990,10 @@
 
             <div class="flex gap-4">
                 <a href="https://www.instagram.com/fexdigital.oficial?igsh=bnkyczd6anpxdWk=" target="_blank"
-                    rel="noopener" class="hover:text-white transition-colors">Instagram</a>
+                    rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
 
-                <a href="#" class="hover:text-white transition-colors">Portfólio</a>
-                <a href="#" class="hover:text-white transition-colors">WhatsApp</a>
+                <a href="#" rel="noopener noreferrer" class="hover:text-white transition-colors">Portfólio</a>
+                <a href="#" rel="noopener noreferrer" class="hover:text-white transition-colors">WhatsApp</a>
             </div>
             <p>&copy; 2024 Todos os direitos reservados à marca.</p>
         </div>
@@ -1116,9 +1129,37 @@
                     </div>
                 </button>
 
+                <button onclick="redirectToWhatsApp('Lyene')"
+                    class="w-full flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-orange-500/40 hover:bg-orange-500/5 transition-all group active:scale-95">
+                    <div
+                        class="w-14 h-14 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all shadow-inner">
+                        <i data-lucide="user-check" class="w-7 h-7"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="flex items-center gap-1.5 mb-0.5">
+                            <span
+                                class="block text-white font-bold text-lg group-hover:text-orange-500 transition-colors">Lyene</span>
+                            <i data-lucide="badge-check" class="w-4 h-4 text-blue-500 fill-blue-500/20"></i>
+                        </div>
+                        <span class="text-xs text-zinc-500 font-medium tracking-wide">Social Media</span>
+                    </div>
+                </button>
 
-
-
+                <button onclick="redirectToWhatsApp('Stéfani')"
+                    class="w-full flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-orange-500/40 hover:bg-orange-500/5 transition-all group active:scale-95">
+                    <div
+                        class="w-14 h-14 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all shadow-inner">
+                        <i data-lucide="user-check" class="w-7 h-7"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="flex items-center gap-1.5 mb-0.5">
+                            <span
+                                class="block text-white font-bold text-lg group-hover:text-orange-500 transition-colors">Stéfani</span>
+                            <i data-lucide="badge-check" class="w-4 h-4 text-blue-500 fill-blue-500/20"></i>
+                        </div>
+                        <span class="text-xs text-zinc-500 font-medium tracking-wide">Roteirista, Editora, Social Media</span>
+                    </div>
+                </button>
 
                 <button onclick="redirectToWhatsApp('Suporte')"
                     class="w-full flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/40 hover:bg-blue-500/5 transition-all group active:scale-95">
@@ -1185,6 +1226,8 @@
                 'Symon': '557996069648',
                 'Matheus': '5579981363431',
                 'Barreto': '5579988674171',
+                'Lyene': '5579998676887',
+                'Stéfani': '557996446564',
                 'Suporte': '557998328062' // Placeholder - User should update
             };
 
